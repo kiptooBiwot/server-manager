@@ -5,9 +5,10 @@ import { IsEmail, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 export class UpdateUserDto extends PartialType(CreateUserDto) {
   @IsString()
   @IsOptional()
-  name!: string;
+  name?: string;
 
   @IsEmail({}, { message: 'Please enter a valid email' })
   @IsOptional()
-  email!: string;
+  @IsString()
+  email?: string;
 }
