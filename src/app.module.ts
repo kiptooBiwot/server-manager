@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/entities/user.entity';
+import { RemoteServersModule } from './remote-servers/remote-servers.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { User } from './users/entities/user.entity';
       synchronize: true,
     }),
     UsersModule,
+    RemoteServersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
